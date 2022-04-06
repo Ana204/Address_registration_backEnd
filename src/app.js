@@ -1,9 +1,10 @@
 const express = require("express")
 const app = express()
-
 const router = require("./routers")
-const server = require("./server")
 
-app.use(server)
+app.use(express.json())
 app.use(router)
 
+app.listen(8081, function(){
+    console.log("Server running")
+})
